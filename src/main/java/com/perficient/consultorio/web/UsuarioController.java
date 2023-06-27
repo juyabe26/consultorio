@@ -2,6 +2,7 @@ package com.perficient.consultorio.web;
 
 import com.perficient.consultorio.model.Usuario;
 import com.perficient.consultorio.service.UsuarioService;
+import com.perficient.consultorio.web.dto.UsuarioDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -22,7 +23,7 @@ public class UsuarioController {
   * @return Datos del usuario
   */
  @GetMapping
- public @ResponseBody Usuario buscarUsuario(@RequestParam(value = "login") String login, @RequestParam(value = "password") String password){
+ public @ResponseBody UsuarioDto buscarUsuario(@RequestParam(value = "login") String login, @RequestParam(value = "password") String password){
   return  usuarioService.buscarUsuario(login,password);
  }
 

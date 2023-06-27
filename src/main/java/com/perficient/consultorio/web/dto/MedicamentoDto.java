@@ -9,8 +9,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class UsuarioDto {
-
-  private String usuario;
-  private String contrasena;
+public class MedicamentoDto {
+    private String codigo;
+    private String nombreGenerico;
+    private String nombreComercial;
+    private String laboratorio;
+    private String marca;
 }

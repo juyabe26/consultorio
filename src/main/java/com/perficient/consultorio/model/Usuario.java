@@ -1,38 +1,23 @@
 package com.perficient.consultorio.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.UUID;
 
-//@Entity
-@Getter
-@Setter
+@Data
+@NoArgsConstructor
 @AllArgsConstructor
-//@Table(name = "usuario")
+@Entity
+@Table(name = "usuario")
 public class Usuario {
 
- public Usuario() { }
-
- // @Id
- // @GeneratedValue(strategy = GenerationType.AUTO)
- // private UUID uuid;
-  //@Column
-  private String primerNombre;
-  //@Column
-  private String segundoNombre;
-  //@Column
-  private String primerApellido;
-  //@Column
-  private String segundoApellido;
-  //@Column
-  private String tipoDocumento;
-  //@Column
-  private String numeroDocumento;
-  //@Column
-  private String email;
-
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private UUID uuid;
+  @Column
+  private String usuario;
+  @Column
+  private String contrasena;
 
 }

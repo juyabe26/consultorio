@@ -5,12 +5,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class UsuarioDto {
-
-  private String usuario;
-  private String contrasena;
+public class AgendaDto {
+    private LocalDate fechaConsulta;
+    private String horaConsulta;
+    private Integer numeroDocumentoPaciente;
+    private Integer numeroDocumentoMedico;
 }
