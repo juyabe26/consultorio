@@ -4,6 +4,7 @@ import com.perficient.consultorio.excepcion.BusinessException;
 import com.perficient.consultorio.model.Paciente;
 import com.perficient.consultorio.model.Usuario;
 import com.perficient.consultorio.repository.PacienteRepository;
+import com.perficient.consultorio.web.dto.MedicoDto;
 import com.perficient.consultorio.web.dto.PacienteDto;
 import com.perficient.consultorio.web.dto.mapper.PacienteMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,4 +32,7 @@ public class PacienteService {
         return paciente;
     }
 
+    public PacienteDto crearPaciente(PacienteDto pacienteDto) {
+        return pacienteMapper.toPacienteDto(pacienteRepository.save(pacienteMapper.toPaciente(pacienteDto)));
+    }
 }

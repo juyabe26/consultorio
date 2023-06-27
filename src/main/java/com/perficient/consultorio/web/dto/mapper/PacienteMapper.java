@@ -11,4 +11,6 @@ public interface PacienteMapper {
 
     PacienteDto toPacienteDto(Paciente paciente);
 
+    Paciente toPaciente(PacienteDto pacienteDto);
+
 }

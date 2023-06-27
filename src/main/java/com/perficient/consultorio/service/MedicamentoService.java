@@ -2,6 +2,7 @@ package com.perficient.consultorio.service;
 
 import com.perficient.consultorio.excepcion.BusinessException;
 import com.perficient.consultorio.model.Medicamento;
+import com.perficient.consultorio.repository.MedicamentoRepository;
 import com.perficient.consultorio.repository.MedicamentoRepositoryJpa;
 import com.perficient.consultorio.web.dto.MedicamentoDto;
 import com.perficient.consultorio.web.dto.mapper.MedicamentoMapper;
@@ -16,11 +17,23 @@ public class MedicamentoService {
     private MedicamentoRepositoryJpa medicoMedicamentoRepositoryJpa;
 
     @Autowired
+    private MedicamentoRepository medicamentoRepository;
+
+    @Autowired
     private MedicamentoMapper medicamentoMapper;
     public List<MedicamentoDto> buscarMedicamento(MedicamentoDto medicamentoDto) {
         List<Medicamento> medicamentoList = medicoMedicamentoRepositoryJpa.buscarMedicamento(medicamentoDto);
         if(medicamentoList.isEmpty())
             throw new BusinessException("El medicamento no existe");
         return medicamentoMapper.MedicamentoDtoList(medicamentoList);
+    }
+
+
+    public Medicamento buscarPorCodigo(String codigoMedicamento){
+        return medicamentoRepository.buscarPorCodigo(codigoMedicamento);
+    }
+
+    public MedicamentoDto crearMedicamento(MedicamentoDto medicamentoDto) {
+        return medicamentoMapper.toMedicamentoDto(medicamentoRepository.save(medicamentoMapper.toMedicamento(medicamentoDto)));
     }
 }

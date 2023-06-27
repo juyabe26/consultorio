@@ -1,7 +1,9 @@
 package com.perficient.consultorio.web;
 
+import com.perficient.consultorio.model.Medico;
 import com.perficient.consultorio.service.MedicoService;
 import com.perficient.consultorio.web.dto.CalendarioMedicoDto;
+import com.perficient.consultorio.web.dto.MedicamentoDto;
 import com.perficient.consultorio.web.dto.MedicoDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +26,11 @@ public class MedicoController {
     @GetMapping("/disponibilidad")
     public @ResponseBody CalendarioMedicoDto disponibilidad(@RequestParam(value = "numeroDocumento") int numeroDocumento){
         return  medicoService.disponibilidad(numeroDocumento);
+    }
+
+    @PostMapping("/crearMedico")
+    public @ResponseBody MedicoDto crearMedico(@RequestBody MedicoDto medicoDto) {
+        return medicoService.crearMedico(medicoDto);
     }
 
 }

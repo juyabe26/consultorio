@@ -56,4 +56,8 @@ public class MedicoService {
             throw new BusinessException("El Medico no existe");
         return calendarioMedicoMapper.toCalendarioMedicoDto(calendarioMedico);
     }
+
+    public MedicoDto crearMedico(MedicoDto medicoDto) {
+        return medicoMapper.toMedicoDto(medicoRepository.save(medicoMapper.toMedico(medicoDto)));
+    }
 }

@@ -11,5 +11,7 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface MedicoMapper {
     MedicoDto toMedicoDto(Medico medico);
+
+    Medico toMedico(MedicoDto medicoDto);
     List<MedicoDto> MedicosDtoList(List<Medico> medicoList);
 }
