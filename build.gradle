@@ -28,6 +28,12 @@ dependencies {
 	implementation group: 'org.mapstruct', name: 'mapstruct', version: '1.5.1.Final'
 	annotationProcessor group: 'org.mapstruct', name: 'mapstruct-processor', version: '1.5.1.Final'
 	implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.1.0'
+	//cliente oAuth2.0
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-oauth2-client', version: '3.1.1'
+	// spring security
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '3.1.1'
+	//Delegar el control de identificación a un servidor Keycloak,Nos permitirá validar un token JWT con el servidor Keycloak.
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-oauth2-resource-server', version: '3.1.1'
 
 }
 
