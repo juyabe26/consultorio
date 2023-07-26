@@ -15,12 +15,12 @@ public class MedicamentoController {
     private IMedicamentoService iMedicamentoService;
 
     @GetMapping
-    public @ResponseBody List<MedicamentoDto> buscarMedicamento(@RequestBody MedicamentoDto medicamentoDto){
+    public List<MedicamentoDto> buscarMedicamento(@RequestBody MedicamentoDto medicamentoDto){
         return  iMedicamentoService.buscarMedicamento(medicamentoDto);
     }
 
     @PostMapping("/crearMedicamento")
-    public @ResponseBody MedicamentoDto crearMedicamento(@RequestBody MedicamentoDto medicamentoDto) {
+    public MedicamentoDto crearMedicamento(@RequestBody MedicamentoDto medicamentoDto) {
         return iMedicamentoService.crearMedicamento(medicamentoDto);
     }
 }

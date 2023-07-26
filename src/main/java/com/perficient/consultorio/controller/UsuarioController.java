@@ -20,7 +20,7 @@ public class UsuarioController {
   * @return Datos del usuario
   */
  @GetMapping
- public @ResponseBody UsuarioDto buscarUsuario(@RequestParam(value = "login") String login, @RequestParam(value = "password") String password){
+ public UsuarioDto buscarUsuario(@RequestParam(value = "login") String login, @RequestParam(value = "password") String password){
   return  iUsuarioService.buscarUsuario(login,password);
  }
 

@@ -13,12 +13,12 @@ public class PacienteController {
     private IPacienteService IPacienteService;
 
     @GetMapping
-    public @ResponseBody PacienteDto buscarPacientePorDocumento(@RequestParam(value = "documento") int documento) {
+    public PacienteDto buscarPacientePorDocumento(@RequestParam(value = "documento") int documento) {
         return IPacienteService.buscarPacientePorDocumento(documento);
     }
 
     @PostMapping("/crearPaciente")
-    public @ResponseBody PacienteDto crearPaciente(@RequestBody PacienteDto pacienteDto) {
+    public PacienteDto crearPaciente(@RequestBody PacienteDto pacienteDto) {
         return IPacienteService.crearPaciente(pacienteDto);
     }
 

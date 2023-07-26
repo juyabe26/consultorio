@@ -14,7 +14,7 @@ public class AgendaController {
     private IAgendaService iAgendaService;
 
     @PostMapping("/crearAgenda")
-    public @ResponseBody AgendaDto crearAgenda(@RequestBody AgendaDto agendaDto) {
+    public AgendaDto crearAgenda(@RequestBody AgendaDto agendaDto) {
         return iAgendaService.crearAgenda(agendaDto);
     }
 }

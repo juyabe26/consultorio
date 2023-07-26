@@ -18,17 +18,17 @@ public class MedicoController {
     private IMedicoService IMedicoService;
 
     @GetMapping
-    public @ResponseBody List<MedicoDto> buscarMedicoPorNombresDocumento(@RequestBody MedicoDto medicoDto) {
+    public List<MedicoDto> buscarMedicoPorNombresDocumento(@RequestBody MedicoDto medicoDto) {
         return IMedicoService.buscarMedicoPorNombresDocumento(medicoDto);
     }
 
     @GetMapping("/disponibilidad")
-    public @ResponseBody CalendarioMedicoDto disponibilidad(@RequestParam(value = "numeroDocumento") int numeroDocumento) {
+    public CalendarioMedicoDto disponibilidad(@RequestParam(value = "numeroDocumento") int numeroDocumento) {
         return IMedicoService.disponibilidad(numeroDocumento);
     }
 
     @PostMapping("/crearMedico")
-    public @ResponseBody MedicoDto crearMedico(@RequestBody MedicoDto medicoDto) {
+    public MedicoDto crearMedico(@RequestBody MedicoDto medicoDto) {
         return IMedicoService.crearMedico(medicoDto);
     }
 

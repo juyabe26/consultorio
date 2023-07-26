@@ -14,7 +14,7 @@ public class ConsultaController {
     private IConsultaService iConsultaService;
 
     @PostMapping("/crearConsulta")
-    public @ResponseBody ConsultaDto crearConsulta(@RequestBody ConsultaDto consultaDto) {
+    public ConsultaDto crearConsulta(@RequestBody ConsultaDto consultaDto) {
         return iConsultaService.crearConsulta(consultaDto);
     }
 
